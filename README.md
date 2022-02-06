@@ -7,6 +7,8 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ```bash
+controller -> service -> repository -> entity
+
 Controller
 url을 가져오고 function을 return, express의 라우터 역할
 
@@ -39,6 +41,8 @@ NestJS가 MovieService를 import하고 Controller에 inject - Dependency Injecti
 
   블랙박스 - 어떤 기능이 있는데 그 기능이 어떻게 돌아가는지 안보이는데 되는. e.g. 인공지능
   화이트박스 - 블랙박스의 반대 e.g. 알고리즘
+
+  log기록 - 그냥 모니터링용도로만 쓸 때는 디비에 저장안하고, sentry, Datadog, aws의 cloudWatch에서 검색해서 찾음
 ```
 
 ## Running the app
