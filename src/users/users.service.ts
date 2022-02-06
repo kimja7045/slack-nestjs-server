@@ -2,5 +2,6 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  postUsers(email: string, nickname: string, password: string) {}
+  getUser() {}
+  postUser(email: string, nickname: string, password: string) {}
 }

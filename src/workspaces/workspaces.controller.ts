@@ -7,7 +7,9 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('WORKSPACE')
 @Controller('api/workspaces/:url/channels/workspaces')
 export class WorkspacesController {
   @Get()

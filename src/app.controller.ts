@@ -15,7 +15,7 @@ export class AppController {
   //   return this.appService.postUser();
   // }
 
-  @Get('/')
+  @Get()
   getHello(): string {
     return this.appService.getHello();
   }
