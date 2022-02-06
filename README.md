@@ -11,7 +11,7 @@ Controller
 url을 가져오고 function을 return, express의 라우터 역할
 
 Service
-실제로 function을 가지는 부분, 비즈니스(e.g. 영화) 로직을 관리하는 역할
+실제로 function을 가지는 부분, 비즈니스(e.g. 영화) 로직을 관리하는 역할, 요청과 응답에 대해서는 모름
 
 Single-responsibility principle
 하나의 module, class 혹은 function이 하나의 기능은
@@ -25,6 +25,20 @@ nest g mo - 모듈 생성
 파이프 - 미들웨어, 유효성 검사
 
 NestJS가 MovieService를 import하고 Controller에 inject - Dependency Injection
+```
+
+## Etc
+
+```bash
+  nest new - 프로젝트 폴더명
+
+  nextjs-admin - 어드민
+
+  tsconfig.json에 다음코드 추가
+  esModuleInterop: true // import * as React from 'react' -> import React from 'react'
+
+  블랙박스 - 어떤 기능이 있는데 그 기능이 어떻게 돌아가는지 안보이는데 되는. e.g. 인공지능
+  화이트박스 - 블랙박스의 반대 e.g. 알고리즘
 ```
 
 ## Running the app
@@ -51,18 +65,6 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
-```
-
-## Etc
-
-```bash
-  nest new - 프로젝트 폴더명
-
-  nextjs-admin - 어드민
-
-  tsconfig.json에 다음코드 추가
-  esModuleInterop: true // import * as React from 'react' -> import React from 'react'
-
 ```
 
 ## License
