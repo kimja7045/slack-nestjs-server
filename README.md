@@ -7,7 +7,7 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ```bash
-controller -> service -> repository -> entity
+controller -> service -> repository -> entity(테이블)
 
 Service
 실제로 function을 가지는 부분, 비즈니스(e.g. 영화) 로직을 관리하는 역할, 요청과 응답에 대해서는 몰라야됨
@@ -25,10 +25,11 @@ nest - 명령어 모음
 nest g co controllerNames- 컨트롤러 생성
 nest g s serviceNames- 서비스 생성
 nest g mo moduleNames - 모듈 생성
+nest g res resourceNames = crud
 
 파이프 - 미들웨어, 유효성 검사
 
-NestJS가 MovieService를 import하고 Controller에 inject - Dependency Injection
+NestJS가 Service를 import하고 Controller에 inject - Dependency Injection
 ```
 
 ## Etc
@@ -45,6 +46,8 @@ NestJS가 MovieService를 import하고 Controller에 inject - Dependency Injecti
   화이트박스 - 블랙박스의 반대 e.g. 알고리즘
 
   log기록 - 그냥 모니터링용도로만 쓸 때는 디비에 저장안하고, sentry, Datadog, aws의 cloudWatch에서 검색해서 찾음
+
+  npx typeorm-model-generator -h localhost -d slack -u root -x nodejsbook -e postgres
 ```
 
 ## Running the app
