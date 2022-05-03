@@ -1,9 +1,16 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+// import * as dotenv from 'dotenv';
 import dotenv from 'dotenv';
-import { ConfigModule } from '@nestjs/config';
+import { Users } from './src/entities/Users';
+import { ChannelChats } from './src/entities/ChannelChats';
+import { ChannelMembers } from './src/entities/ChannelMembers';
+import { Channels } from './src/entities/Channels';
+import { DMs } from './src/entities/DMs';
+import { Mentions } from './src/entities/Mentions';
+import { WorkspaceMembers } from './src/entities/WorkspaceMembers';
+import { Workspaces } from './src/entities/Workspaces';
 
 dotenv.config();
-console.log(process.env.DB_USERNAME);
 
 const config: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -13,8 +20,17 @@ const config: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  // entities: [ChannelChats],
-  entities: ['entities/*.js'],
+  entities: [
+    Users,
+    ChannelChats,
+    ChannelMembers,
+    Channels,
+    DMs,
+    Mentions,
+    WorkspaceMembers,
+    Workspaces,
+  ],
+  // entities: ['entities/*.js'],
   migrations: [__dirname + '/src/migrations/*.ts'],
   cli: { migrationsDir: 'src/migrations' },
   // autoLoadEntities: true,

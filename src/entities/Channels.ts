@@ -16,7 +16,7 @@ import { Users } from './Users';
 import { Workspaces } from './Workspaces';
 
 @Index('WorkspaceId', ['WorkspaceId'], {})
-@Entity({ schema: 'sleact' })
+@Entity({ schema: 'slack' })
 export class Channels {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
@@ -24,7 +24,7 @@ export class Channels {
   @Column('varchar', { name: 'name', length: 30 })
   name: string;
 
-  @Column('tinyint', {
+  @Column('int', {
     name: 'private',
     nullable: true,
     width: 1,

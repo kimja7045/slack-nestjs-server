@@ -8,7 +8,6 @@ import { WorkspacesModule } from './workspaces/workspaces.module';
 import { ChannelsModule } from './channels/channels.module';
 import { DmsModule } from './dms/dms.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ChannelChats } from './entities/ChannelChats';
 import * as ormconfig from '../ormconfig';
 
 // const getData = async () => {

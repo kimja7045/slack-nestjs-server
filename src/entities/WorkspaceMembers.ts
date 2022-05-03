@@ -11,7 +11,7 @@ import { Workspaces } from './Workspaces';
 import { Users } from './Users';
 
 @Index('UserId', ['UserId'], {})
-@Entity('workspacemembers', { schema: 'sleact' })
+@Entity('workspacemembers', { schema: 'slack' })
 export class WorkspaceMembers {
   @CreateDateColumn()
   createdAt: Date;
@@ -25,7 +25,8 @@ export class WorkspaceMembers {
   @Column('int', { primary: true, name: 'UserId' })
   UserId: number;
 
-  @Column('datetime', { name: 'loggedInAt', nullable: true })
+  // @Column('datetime', { name: 'loggedInAt', nullable: true })
+  @Column('timestamptz', { name: 'loggedInAt', nullable: true })
   loggedInAt: Date | null;
 
   @ManyToOne(() => Workspaces, (workspaces) => workspaces.WorkspaceMembers, {

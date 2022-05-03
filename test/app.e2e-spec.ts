@@ -1,6 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
+// import * as request from 'supertest';
+import request from 'supertest';
+import passport from 'passport';
+import session from 'express-session';
 import { AppModule } from './../src/app.module';
 
 describe('AppController (e2e)', () => {
@@ -12,13 +15,17 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.use(passport.initialize());
+    app.use(passport.session());
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  // superagent -> supertest
+  // axios -> moxios
+  it('/ (GET)', (done) => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Hello World!', done);
   });
 });
